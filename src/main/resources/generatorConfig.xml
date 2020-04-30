@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry location="/Users/yunchenouyang/Desktop/MarchPNew/mysqlConnection/mysql-connector-java-5.1.6.jar" />
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--不再追加xml内容-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://rm-bp17idgaubz1ka531po.mysql.rds.aliyuncs.com/mall?characterEncoding=UTF8"
+                        userId="root"
+                        password="cgffeI5yWlNiCasi">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+            <property name="useJSR310Types" value="TIMESTAMP" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.chen.mall.pojo" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mappers"  targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.chen.mall.dao"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+ <!--       <table tableName="mall_order" domainObjectName="Order" enableUpdateByExample="false" enableDeleteByExample="false"
+                                enableSelectByExample="false"   enableCountByExample="false"    />-->
+        <!--<table tableName="mall_user" domainObjectName="User" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false"   enableCountByExample="false"    />-->
+        <!--<table tableName="mall_category" domainObjectName="Category" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false"   enableCountByExample="false"    />-->
+     <!--   <table tableName="mall_product" domainObjectName="Product" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false"   enableCountByExample="false"    >
+            <columnOverride column="sub_images" jdbcType="VARCHAR"></columnOverride>
+            <columnOverride column="detail" javaType="String"></columnOverride>
+        </table>-->
+        <table tableName="mall_shipping" domainObjectName="Shipping" enableUpdateByExample="false" enableDeleteByExample="false"
+              enableSelectByExample="false"   enableCountByExample="false"    />
+    </context>
+</generatorConfiguration>

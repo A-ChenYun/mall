@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-bp17idgaubz1ka531po.mysql.rds.aliyuncs.com/mall?characterEncoding=UTF8&useSSL=false
+    username: root
+    password: cgffeI5yWlNiCasi
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mappers/*.xml
+server:
+  servlet:
+    session:
+      timeout: 30
